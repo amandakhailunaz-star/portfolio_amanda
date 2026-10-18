@@ -29,14 +29,17 @@ if not ADMIN_PASSWORD:
     )
 
 
-# Koneksi database
+# Koneksi database Aiven
 def koneksi_database():
     return pymysql.connect(
-        host="localhost",
-        user="root",
-        password="",
-        database="portfolio_amanda",
-        cursorclass=pymysql.cursors.DictCursor
+        host=os.environ["DB_HOST"],
+        port=int(os.environ.get("DB_PORT", "20055")),
+        user=os.environ["DB_USER"],
+        password=os.environ["DB_PASSWORD"],
+        database=os.environ.get("DB_NAME", "defaultdb"),
+        ssl={"check_hostname": True},
+        cursorclass=pymysql.cursors.DictCursor,
+        connect_timeout=15
     )
 
 
