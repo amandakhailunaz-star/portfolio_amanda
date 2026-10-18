@@ -385,7 +385,13 @@ def dashboard():
             """)
             daftar_pesan = cursor.fetchall()
 
-        token = token_csrf()
+            from datetime import timedelta
+
+            for pesan in daftar_pesan:
+                if pesan["tanggal_pengiriman_pesan"]:
+                    pesan["tanggal_pengiriman_pesan"] += timedelta(hours=7)
+
+            token = token_csrf()
 
         return render_template_string("""
         <!DOCTYPE html>
