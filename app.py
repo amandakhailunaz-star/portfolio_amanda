@@ -151,10 +151,10 @@ def kontak():
 @app.route("/kirim-pesan", methods=["POST"])
 def kirim_pesan():
     nama = request.form.get("nama", "").strip()
-    email = request.form.get("email", "").strip()
+    gmail = request.form.get("gmail", "").strip()
     isi = request.form.get("isi", "").strip()
 
-    if not nama or not email or not isi:
+    if not nama or not gmail or not isi:
         return """
         <script>
             alert("Semua kolom wajib diisi!");
@@ -169,10 +169,10 @@ def kirim_pesan():
 
         with koneksi.cursor() as cursor:
             sql = """
-                INSERT INTO pesan (nama, email, isi)
+                INSERT INTO pesan (nama, gmail, isi)
                 VALUES (%s, %s, %s)
             """
-            cursor.execute(sql, (nama, email, isi))
+            cursor.execute(sql, (nama, gmail, isi))
 
         koneksi.commit()
 
@@ -379,7 +379,7 @@ def dashboard():
 
         with koneksi.cursor() as cursor:
             cursor.execute("""
-                SELECT id, nama, email, isi, tanggal_pengiriman_pesan
+                SELECT id, nama, gmail, isi, tanggal_pengiriman_pesan
                 FROM pesan
                 ORDER BY id DESC
             """)
@@ -433,8 +433,8 @@ def dashboard():
                             </div>
 
                             <p class="mb-2">
-                                <strong>Email:</strong>
-                                {{ pesan.email }}
+                                <strong>Gmail:</strong>
+                                {{ pesan.gmail }}
                             </p>
 
                             <p class="mb-3" style="white-space: pre-wrap;">{{ pesan.isi }}</p>
