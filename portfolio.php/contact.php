@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Website portofolio Amanda Nazwa, mahasiswa Teknik Informatika.">
+
+  <title>Kontak | Amanda Nazwa</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top border-bottom">
+    <div class="container">
+      <a class="navbar-brand fw-bold brand" href="index.php">
+        Amanda<span>.</span>
+      </a>
+
+      <button class="navbar-toggler" type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#mainNav"
+        aria-controls="mainNav"
+        aria-expanded="false"
+        aria-label="Buka navigasi">
+
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="index.php">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="about.php">About</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link" href="project.php">Project</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link active" href="contact.php">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<main>
+
+  <section class="section-heading container text-center py-5">
+    <p class="eyebrow fw-semibold text-uppercase">Contact</p>
+
+    <h1 class="display-5 fw-bold">Let's Connect.</h1>
+
+    <p class="section-copy mx-auto mt-3">
+      Jika punya pertanyaan, silakan hubungi melalui informasi di bawah ini.
+    </p>
+  </section>
+
+  <section class="container pb-5">
+    <div class="row g-4">
+
+      <!-- Informasi Kontak -->
+      <div class="col-12 col-md-5">
+        <div class="contact-info p-4 p-lg-5 h-100">
+
+          <h2 class="h4">Let's connect!</h2>
+
+          <p>Terima kasih sudah mengunjungi portofolio saya.</p>
+
+          <p>
+            <strong>Gmail:</strong><br>
+            <a class="text-link" href="mailto:amandakhailunaz@gmail.com">
+              amandakhailunaz@gmail.com
+            </a>
+          </p>
+
+          <p>
+            <strong>GitHub:</strong><br>
+            <a class="text-link"
+              href="https://github.com/amandakhailunaz"
+              target="_blank"
+              rel="noopener">
+              github.com/amandakhailunaz
+            </a>
+          </p>
+
+          <p class="mb-0">
+            <strong>Lokasi:</strong><br>
+            Jakarta, Indonesia
+          </p>
+
+        </div>
+      </div>
+
+      <!-- Form Kontak -->
+      <div class="col-12 col-md-7">
+
+        <form class="contact-form p-4 p-lg-5"
+          action="kirim-pesan.php"
+          method="POST">
+
+          <div class="mb-3">
+            <label for="nama" class="form-label">Nama</label>
+
+            <input
+              type="text"
+              class="form-control"
+              id="nama"
+              name="nama"
+              placeholder="Nama kamu"
+              required>
+          </div>
+
+          <div class="mb-3">
+            <label for="gmail" class="form-label">Gmail</label>
+
+            <input
+              type="email"
+              class="form-control"
+              id="gmail"
+              name="gmail"
+              placeholder="nama@gmail.com"
+              required>
+          </div>
+
+          <div class="mb-3">
+            <label for="isi" class="form-label">Pesan</label>
+
+            <textarea
+              class="form-control"
+              id="isi"
+              name="isi"
+              rows="5"
+              placeholder="Tulis pesan..."
+              required></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-pink">
+            Kirim Pesan
+          </button>
+
+          <p class="small text-muted mt-3 mb-0">
+            Pesan kamu akan disimpan melalui sistem kontak website.
+          </p>
+
+        </form>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="py-4 mt-5">
+  <div class="container text-center">
+    <p class="mb-0">© 2026 Amanda Nazwa</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

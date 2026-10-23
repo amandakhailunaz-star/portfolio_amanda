@@ -1,0 +1,11 @@
+# Lindungi file sensitif
+<FilesMatch "^(\.env|config\.php)$">
+    Require all denied
+</FilesMatch>
+Options -Indexes
+DirectoryIndex index.php
+
+# URL bersih (opsional): /about -> about.php, dst.
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteRule ^([^/.]+)$ $1.php [L]

@@ -6,23 +6,23 @@
   <meta name="description" content="Website portofolio Amanda Nazwa, mahasiswa Teknik Informatika.">
   <title>Beranda | Amanda Nazwa</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
   <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top border-bottom">
     <div class="container">
-      <a class="navbar-brand fw-bold brand" href="/">Amanda<span>.</span></a>
+      <a class="navbar-brand fw-bold brand" href="index.php">Amanda<span>.</span></a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Buka navigasi">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="mainNav">
         <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
-        <li class="nav-item"><a class="nav-link" href="/project">Project</a></li>
-        <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="about.php">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="project.php">Project</a></li>
+        <li class="nav-item"><a class="nav-link" href="contact.php">Contact</a></li>
       </ul>
       </div>
     </div>
@@ -38,8 +38,8 @@
           <h1 class="display-3 fw-bold mb-3">Amanda <span>Nazwa.</span></h1>
           <h2 class="h4 mb-3">Mahasiswi Teknik Informatika 2025</h2>
           <p class="lead mb-4">Saya tertarik dengan teknologi, pengembangan website, dan dunia digital. Saya senang mempelajari hal baru serta mengembangkan kemampuan melalui berbagai proyek yang sudah saya buat.</p>
-          <a href="about.html" class="btn btn-brown btn-lg me-2 mb-2">About me</a>
-          <a href="project.html" class="btn btn-outline-brown btn-lg mb-2">Lihat Project</a>
+          <a href="about.php" class="btn btn-brown btn-lg me-2 mb-2">About me</a>
+          <a href="project.php" class="btn btn-outline-brown btn-lg mb-2">Lihat Project</a>
         </div>
         <div class="col-12 col-md-5 text-center">
           <img src="amandakhailu.jpeg" class="img-fluid profile-img" alt="Foto profil Amanda Nazwa">

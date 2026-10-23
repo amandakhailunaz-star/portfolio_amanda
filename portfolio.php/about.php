@@ -13,7 +13,7 @@
     rel="stylesheet"
   >
 
-  <link rel="stylesheet" href="/style.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -23,7 +23,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top border-bottom">
       <div class="container">
 
-        <a class="navbar-brand fw-bold brand" href="/">
+        <a class="navbar-brand fw-bold brand" href="index.php">
           Amanda<span>.</span>
         </a>
 
@@ -43,19 +43,19 @@
           <ul class="navbar-nav ms-auto">
 
             <li class="nav-item">
-              <a class="nav-link" href="/">Home</a>
+              <a class="nav-link" href="index.php">Home</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link active" href="/about.html">About</a>
+              <a class="nav-link active" href="about.php">About</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="/project.html">Project</a>
+              <a class="nav-link" href="project.php">Project</a>
             </li>
 
             <li class="nav-item">
-              <a class="nav-link" href="/contact">Contact</a>
+              <a class="nav-link" href="contact.php">Contact</a>
             </li>
 
           </ul>
@@ -97,7 +97,7 @@
         <div class="col-12 col-md-4 text-center">
 
           <img
-            src="/amanda.jpg"
+            src="amanda.jpg"
             class="img-fluid about-img"
             alt="Foto Amanda Nazwa"
           >
@@ -222,7 +222,7 @@
 
               <a
                 class="btn btn-primary"
-                href="/contact"
+                href="contact.php"
               >
                 Hubungi Saya
               </a>

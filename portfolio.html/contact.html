@@ -104,9 +104,7 @@
       <!-- Form Kontak -->
       <div class="col-12 col-md-7">
 
-        <form class="contact-form p-4 p-lg-5"
-          action="/kirim-pesan"
-          method="POST">
+        <form class="contact-form p-4 p-lg-5" id="contactForm">
 
           <div class="mb-3">
             <label for="nama" class="form-label">Nama</label>
@@ -124,7 +122,7 @@
             <label for="gmail" class="form-label">Gmail</label>
 
             <input
-              type="gmail"
+              type="email"
               class="form-control"
               id="gmail"
               name="gmail"
@@ -149,7 +147,7 @@
           </button>
 
           <p class="small text-muted mt-3 mb-0">
-            Pesan kamu akan disimpan melalui sistem kontak website.
+            Versi HTML akan membuka aplikasi email kamu. Untuk menyimpan pesan ke database, gunakan versi PHP.
           </p>
 
         </form>
@@ -167,6 +165,17 @@
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+  document.getElementById('contactForm').addEventListener('submit', function (event) {
+    event.preventDefault();
+    const nama = document.getElementById('nama').value.trim();
+    const email = document.getElementById('gmail').value.trim();
+    const isi = document.getElementById('isi').value.trim();
+    const subject = encodeURIComponent('Pesan dari portofolio - ' + nama);
+    const body = encodeURIComponent('Nama: ' + nama + '\nEmail: ' + email + '\n\nPesan:\n' + isi);
+    window.location.href = 'mailto:amandakhailunaz@gmail.com?subject=' + subject + '&body=' + body;
+  });
+</script>
 
 </body>
 </html>
