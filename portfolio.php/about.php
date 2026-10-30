@@ -1,3 +1,22 @@
+<?php
+require "koneksi.php";
+
+// Mengambil data pribadi
+$query_profil = "SELECT * FROM data_pribadi LIMIT 1";
+$result_profil = mysqli_query($koneksi, $query_profil);
+$profil = mysqli_fetch_assoc($result_profil);
+
+// Mengambil data pendidikan
+$query_pendidikan = "SELECT * FROM pendidikan";
+$result_pendidikan = mysqli_query($koneksi, $query_pendidikan);
+$data_pendidikan = mysqli_fetch_all($result_pendidikan, MYSQLI_ASSOC);
+
+// Mengambil data skill
+$query_skill = "SELECT * FROM skill";
+$result_skill = mysqli_query($koneksi, $query_skill);
+$data_skill = mysqli_fetch_all($result_skill, MYSQLI_ASSOC);
+?>
+
 <!DOCTYPE html>
 <html lang="id">
 <head>
@@ -97,7 +116,11 @@
         <div class="col-12 col-md-4 text-center">
 
           <img
-            src="amanda.jpg"
+            src="<?php
+              echo !empty($profil['foto'])
+                ? htmlspecialchars($profil['foto'])
+                : 'amanda.jpg';
+            ?>"
             class="img-fluid about-img"
             alt="Foto Amanda Nazwa"
           >
@@ -111,13 +134,17 @@
           <div class="content-panel p-4 p-lg-5">
 
             <h2 class="h3">
-              Hi, I'm Amanda!
+              Hi, I'm <?php
+                echo htmlspecialchars($profil['nama'] ?? 'Amanda');
+              ?>!
             </h2>
 
             <p>
-              Saya Amanda Nazwa, mahasiswi Teknik Informatika
-              angkatan 2025 yang saat ini sedang mengembangkan
-              kemampuan di bidang teknologi dan informatika.
+              <?php
+                echo htmlspecialchars(
+                  $profil['deskripsi'] ?? 'Informasi belum tersedia.'
+                );
+              ?>
             </p>
 
             <p>
@@ -140,12 +167,49 @@
               </li>
 
               <li>
-                <strong>Bidang:</strong> Teknik Informatika
+                <strong>Bidang:</strong>
+                <?php
+                  echo htmlspecialchars($profil['profesi'] ?? 'Teknik Informatika');
+                ?>
               </li>
 
               <li>
                 <strong>Minat:</strong> Database, MySQL, dan Internet of Things
               </li>
+
+            </ul>
+
+
+            <!-- PENDIDIKAN -->
+            <h3 class="h5 mt-4">
+              Riwayat Pendidikan
+            </h3>
+
+            <ul class="info-list">
+
+              <?php
+              if (!empty($data_pendidikan)) {
+                  foreach ($data_pendidikan as $pendidikan) {
+                      echo "<li>";
+
+                      echo "<strong>" .
+                        htmlspecialchars($pendidikan['nama_sekolah']) .
+                        "</strong><br>";
+
+                      echo htmlspecialchars($pendidikan['jurusan'] ?? '');
+
+                      echo " (" .
+                        htmlspecialchars($pendidikan['tahun_mulai'] ?? '') .
+                        " - " .
+                        htmlspecialchars($pendidikan['tahun_selesai'] ?? '') .
+                        ")";
+
+                      echo "</li>";
+                  }
+              } else {
+                  echo "<li>Data pendidikan belum tersedia.</li>";
+              }
+              ?>
 
             </ul>
 
@@ -157,21 +221,17 @@
 
             <div class="d-flex flex-wrap gap-2">
 
-              <span class="badge skill-badge">
-                HTML &amp; CSS
-              </span>
-
-              <span class="badge skill-badge">
-                Python
-              </span>
-
-              <span class="badge skill-badge">
-                Database / MySQL
-              </span>
-
-              <span class="badge skill-badge">
-                Internet of Things
-              </span>
+              <?php
+              if (!empty($data_skill)) {
+                  foreach ($data_skill as $skill) {
+                      echo '<span class="badge skill-badge">';
+                      echo htmlspecialchars($skill['nama_skill']);
+                      echo '</span>';
+                  }
+              } else {
+                  echo "Data skill belum tersedia.";
+              }
+              ?>
 
             </div>
 
@@ -252,7 +312,7 @@
     </div>
 
   </footer>
-  
+
   <script
     src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
   ></script>
